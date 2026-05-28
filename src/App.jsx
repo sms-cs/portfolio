@@ -1,71 +1,128 @@
+import heroImage from './assets/hero.png'
 import './App.css'
+
+const projects = [
+  {
+    name: 'SaloStack',
+    description:
+      'A web development and digital solutions brand for small businesses that need a cleaner online presence.',
+  },
+  {
+    name: 'Tempo AI',
+    description:
+      'An AI-DJ concept focused on smoother playlist flow, music transitions, and better listening experiences.',
+  },
+  {
+    name: 'Smart Market',
+    description:
+      'A marketplace-style web project exploring product browsing, business workflows, and customer experience.',
+  },
+]
+
+const skills = [
+  'React',
+  'JavaScript',
+  'HTML',
+  'CSS',
+  'GitHub Pages',
+  'Python',
+  'Cybersecurity',
+  'Web Development',
+]
 
 function App() {
   return (
-    <main className="page">
-      <section className="hero">
-        <p className="eyebrow">Sebastian Salazar</p>
-        <h1>Computer Science Graduate & Future Cybersecurity Master’s Student</h1>
-        <p className="heroText">
-          I build clean, useful websites and software projects with a focus on real-world impact,
-          startups, and digital solutions.
-        </p>
+    <main className="site-shell">
+      <nav className="topbar" aria-label="Main navigation">
+        <a className="brand" href="#home">
+          Sebastian Salazar
+        </a>
+        <div className="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
 
-        <div className="buttons">
-          <a href="#projects">View Projects</a>
-          <a href="#contact" className="secondary">Contact Me</a>
+      <section className="hero" id="home">
+        <div className="hero-copy">
+          <p className="eyebrow">Computer Science | Cybersecurity | Web Development</p>
+          <h1>Building useful software with a security-minded approach.</h1>
+          <p className="hero-text">
+            I am a Computer Science graduate from Quinnipiac University and an incoming
+            cybersecurity graduate student. This portfolio is a simple home base for my projects,
+            skills, and contact information.
+          </p>
+          <div className="actions">
+            <a className="button" href="#projects">
+              View projects
+            </a>
+            <a
+              className="button secondary"
+              href="https://github.com/sms-cs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub profile
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-visual" aria-label="Portfolio technology stack preview">
+          <img src={heroImage} alt="" />
+          <div>
+            <span className="stat-label">Current focus</span>
+            <strong>React sites, software projects, and cybersecurity foundations</strong>
+          </div>
         </div>
       </section>
 
-      <section className="section">
-        <h2>About Me</h2>
+      <section className="section about" aria-labelledby="about-title">
+        <p className="section-kicker">About</p>
+        <h2 id="about-title">A practical portfolio starter.</h2>
         <p>
-          I’m a Computer Science graduate from Quinnipiac University and an incoming M.S.
-          Cybersecurity student. I’m interested in software engineering, cybersecurity,
-          entrepreneurship, and building products that solve real problems.
+          I like building clean, useful websites and software projects that solve real problems.
+          This site is intentionally simple for now so I can keep adding stronger project details,
+          screenshots, and links over time.
         </p>
       </section>
 
-      <section className="section" id="projects">
-        <h2>Projects</h2>
-
-        <div className="grid">
-          <div className="card">
-            <h3>SaloStack</h3>
-            <p>
-              A web development and digital solutions brand focused on helping small businesses
-              improve their online presence.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Tempo AI / AI-DJ</h3>
-            <p>
-              An AI-powered DJ platform designed to help users create smoother music transitions
-              and better playlist flow.
-            </p>
-          </div>
-
-          <div className="card">
-            <h3>Smart Market</h3>
-            <p>
-              A marketplace-style web project focused on product browsing, business workflows,
-              and a cleaner customer experience.
-            </p>
-          </div>
+      <section className="section" id="projects" aria-labelledby="projects-title">
+        <div className="section-heading">
+          <p className="section-kicker">Projects</p>
+          <h2 id="projects-title">Work in progress</h2>
+        </div>
+        <div className="project-grid">
+          {projects.map((project) => (
+            <article className="project-card" key={project.name}>
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="section">
-        <h2>Skills</h2>
-        <p>React, JavaScript, HTML, CSS, GitHub, Python, Cybersecurity, Web Development</p>
+      <section className="section" id="skills" aria-labelledby="skills-title">
+        <div className="section-heading">
+          <p className="section-kicker">Skills</p>
+          <h2 id="skills-title">Tools I am building with</h2>
+        </div>
+        <ul className="skill-list" aria-label="Skills">
+          {skills.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
       </section>
 
-      <section className="section" id="contact">
-        <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <p>GitHub: github.com/sms-cs</p>
-        <p>LinkedIn: linkedin.com/in/your-linkedin</p>
+      <section className="section contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p className="section-kicker">Contact</p>
+          <h2 id="contact-title">Let us connect.</h2>
+          <p>More contact links can go here as the portfolio grows.</p>
+        </div>
+        <a className="button" href="https://github.com/sms-cs" target="_blank" rel="noreferrer">
+          Visit GitHub
+        </a>
       </section>
     </main>
   )

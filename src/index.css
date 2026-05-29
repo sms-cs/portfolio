@@ -1,13 +1,66 @@
-:root {
-  color: #111111;
-  background: #d1a134;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+@font-face {
+  font-family: 'Tektur Local';
+  src: url('./assets/fonts/tektur-800.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
 }
 
-* {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'Tektur Local';
+  src: url('./assets/fonts/tektur-700.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk Local';
+  src: url('./assets/fonts/space-grotesk-400.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk Local';
+  src: url('./assets/fonts/space-grotesk-600.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Grotesk Local';
+  src: url('./assets/fonts/space-grotesk-700.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono Local';
+  src: url('./assets/fonts/ibm-plex-mono-500.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono Local';
+  src: url('./assets/fonts/ibm-plex-mono-700.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color: #05060d;
+  background: #ffffff;
+  font-family: 'Space Grotesk Local', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -19,5 +72,6 @@ body,
 }
 
 body {
-  background: #d1a134;
+  background: #ffffff;
+  overflow-x: hidden;
 }

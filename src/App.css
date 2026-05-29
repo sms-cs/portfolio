@@ -12,6 +12,33 @@
   overflow: hidden;
 }
 
+.empty-screen {
+  display: grid;
+  place-items: center;
+}
+
+.explore-disclaimer {
+  text-align: center;
+}
+
+.explore-disclaimer h1 {
+  margin: 0;
+  font-family: 'Space Grotesk Local', Arial, Helvetica, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.explore-disclaimer p {
+  margin: 14px 0 0;
+  font-family: 'IBM Plex Mono Local', Consolas, monospace;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .intro-screen::before {
   position: absolute;
   z-index: 4;

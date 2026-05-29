@@ -126,7 +126,12 @@ function App() {
     <>
       <PageChrome showNav={isExploring} onResumeClick={() => setIsResumeOpen(true)} />
       {isExploring ? (
-        <main className="empty-screen" aria-label="Blank explore page" />
+        <main className="empty-screen" aria-label="Explore page under construction">
+          <section className="explore-disclaimer">
+            <h1>Nothing to see yet!</h1>
+            <p>This website is still under construction.</p>
+          </section>
+        </main>
       ) : (
         <IntroScreen isTransitioning={isTransitioning} onExplore={handleExplore} />
       )}
